@@ -1,153 +1,577 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="自治体様向け ITソリューションのご案内チラシ" />
-  <title>自治体様向け ITソリューションご案内｜<<株式会社オーシーシー>></title>
-  <style>
-    :root {
-      --bg: #f7fbff;
-      --surface: #ffffff;
-      --ink: #0f172a;
-      --muted: #475569;
-      --line: #e2e8f0;
-      --brand: #1d4ed8;
-      --accent: #059669;
-      --chip: #e0f2fe;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; padding: 0;
-      font-family: system-ui, "Noto Sans JP", sans-serif;
-      color: var(--ink);
-      background: linear-gradient(180deg, var(--bg) 0%, #fff 100%);
-    }
-    .container { max-width: 1024px; margin: 0 auto; padding: 24px; }
-    header { background: linear-gradient(90deg, #eff6ff, #ecfeff); border-bottom: 1px solid var(--line); }
-    .topbar { display: flex; justify-content: space-between; align-items: center; }
-    .logo { display: flex; gap: 8px; font-weight: bold; }
-    .logo-mark { width: 36px; height: 36px; border-radius: 8px; background: var(--brand); color: #fff; display:grid; place-items:center; font-weight:800; }
-    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items:center; padding: 20px 0; }
-    .hero h1 { font-size: 28px; margin: 0 0 10px; }
-    .lead { color: var(--muted); margin-bottom: 16px; }
-    .badges { display:flex; flex-wrap:wrap; gap:8px; }
-    .badge { background: var(--chip); border:1px solid #bae6fd; border-radius:999px; font-size:12px; padding:6px 10px; }
-    section { padding: 24px 0; }
-    h2 { font-size:20px; margin:0 0 12px; }
-    .grid { display:grid; gap:14px; }
-    .g-2 { grid-template-columns:repeat(2,1fr); }
-    .g-3 { grid-template-columns:repeat(3,1fr); }
-    .card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px; }
-    .card h3 { margin:0 0 6px; font-size:16px; }
-    .muted { color:var(--muted); font-size:14px; }
-    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-    .stat { background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px; padding:16px; text-align:center; }
-    .stat .num { font-size:24px; font-weight:bold; color:var(--brand); }
-    .cta { background:#e0f2fe; border-radius:12px; padding:18px; display:flex; justify-content:space-between; align-items:center; }
-    .cta a { background:var(--brand); color:#fff; text-decoration:none; padding:10px 14px; border-radius:8px; font-weight:700; }
-    footer { border-top:1px solid var(--line); padding:20px 0; font-size:14px; color:var(--muted); }
-    @media (max-width:800px){ .hero{grid-template-columns:1fr;} .g-2,.g-3,.stats{grid-template-columns:1fr;} .cta{flex-direction:column;gap:10px;} }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申請管理システム 導入効果アンケート協力のお願い | NEC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Yu Gothic UI', Meiryo, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .survey-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+        }
+
+        .survey-info p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+        }
+
+        .section {
+            padding: 80px 0;
+            background: white;
+            margin: 0;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            color: #003366;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 51, 102, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            color: #003366;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 51, 102, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-3px);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .deliverables {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .deliverable-section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.08);
+        }
+
+        .deliverable-section h4 {
+            color: #003366;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        .faq {
+            background: white;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+
+        .faq-question {
+            background: #003366;
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            background: white;
+        }
+
+        .final-cta {
+            background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .secondary-button {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 51, 102, 0.08);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #ff6b35;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .icon-large {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="topbar">
-        <div class="logo"><div class="logo-mark">IT</div><div>株式会社オーシーシー</div></div>
-      </div>
-      <div class="hero">
-        <div>
-          <h1>自分たちに合ったDXツールで自治体業務を効率化</h1>
-          <p class="lead">OCCは、役場の<strong>書かない窓口・行かない窓口・AI電話対応・多言語業務</strong>など、住民サービスと業務改善を両立するDXソリューションをご提供します。</p>
-          <div class="badges">
-            <span class="badge">住民対応DX</span>
-            <span class="badge">業務DX</span>
-            <span class="badge">リモートワーク</span>
-            <span class="badge">次世代DX</span>
-          </div>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>申請管理システムをご利用いただいている皆さまへ</h1>
+                <p class="hero-subtitle">アンケートご協力のお願い（沖縄県内導入団体さま限定）</p>
+                <p class="hero-description">
+                    私たちOCCは、自治体さまの業務が円滑に進み、住民サービスの質がさらに高まるよう<br>
+                    より一層のご支援を目指しています。<br>
+                    その一環として、導入いただいた「申請管理システム」の活用状況や成果・課題を確認させていただくためのアンケートを実施いたします。<br>
+                    ご回答は匿名で集計し、<strong>沖縄県内全体の傾向</strong>と<strong>貴団体向けのフィードバック</strong>を整理してお戻しします。
+                </p>
+                
+                <div class="survey-info">
+                    <p><strong>📊 所要時間：5〜7分</strong></p>
+                    <p><strong>📅 回答期限：○月○日（○）</strong></p>
+                    <p><strong>🎁 沖縄県内の傾向と貴団体へのフィードバックを提供</strong></p>
+                </div>
+                
+                <a href="#survey-form" class="cta-button">🔗 アンケートに回答する</a>
+            </div>
         </div>
-        <div>
-          <div class="card">
-            <h3>ご相談・デモ依頼</h3>
-            <p class="muted">要件に合わせたご提案・デモ環境をご用意します。</p>
-            <a href="mailto:<<div-sys-dsg@occ.co.jp>>">メールで相談</a>
-          </div>
+    </section>
+
+    <!-- アンケート参加のメリット -->
+    <section class="section">
+        <div class="container">
+            <h2>📊 アンケート参加のメリット</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px;">ご協力いただいた団体様には、以下の成果物を無償で提供いたします</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">📊</span>
+                    <h3>沖縄県内全体統計</h3>
+                    <p>県内の他団体での導入効果や活用状況をまとめた統計資料をお渡しします。</p>
+                    <ul class="feature-list">
+                        <li>業務効率化の実感度（県内平均との比較）</li>
+                        <li>システム満足度の傾向</li>
+                        <li>住民サービス改善の状況</li>
+                        <li>よくある課題と解決事例</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">📈</span>
+                    <h3>効果の見える化レポート</h3>
+                    <p>貴団体の導入効果をグラフや図表で分かりやすく可視化したレポートを提供します。</p>
+                    <ul class="feature-list">
+                        <li>業務時間短縮効果の測定</li>
+                        <li>システム評価の他団体比較</li>
+                        <li>ROI（投資対効果）の算出</li>
+                        <li>議会報告・説明資料として活用可能</li>
+                    </ul>
+                </div>
+                           </div>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section>
-      <h2>住民対応DX</h2>
-      <div class="grid g-2">
-        <div class="card"><h3>① 書かない窓口</h3><ul class="muted"><li>スマート行政窓口ソリューション</li><li>かんたん窓口サービス</li><li>PASid face</li></ul></div>
-        <div class="card"><h3>② 行かない窓口</h3><ul class="muted"><li>スマート申請システム</li></ul></div>
-        <div class="card"><h3>③ 窓口多言語業務</h3><ul class="muted"><li>SmaLingual</li><li>VoiceOn</li></ul></div>
-        <div class="card"><h3>④ AI電話対応</h3><ul class="muted"><li>AIコンシェルジュ</li></ul></div>
-      </div>
     </section>
 
-    <section>
-      <h2>業務DX</h2>
-      <div class="grid g-2">
-        <div class="card"><h3>⑤ 業務自動化</h3><ul class="muted"><li>RPA (WinActor)</li><li>AI-OCR</li></ul></div>
-        <div class="card"><h3>⑥ 内部FAQ管理</h3><ul class="muted"><li>ふれあいコンシェルジュ</li></ul></div>
-        <div class="card"><h3>⑦ リモートワーク環境</h3><ul class="muted"><li>AvePoint</li><li>A10（ローカルブレイクアウト）</li><li>MS365</li></ul></div>
-        <div class="card"><h3>⑧ 業務量調査</h3><ul class="muted"><li>Govmates Pit</li><li>ITPQログ分析</li></ul></div>
-      </div>
+    <!-- 調査の進め方 -->
+    <section class="section">
+        <div class="container">
+            <h2>🔄 調査の進め方</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px;">3ステップで完了する簡単なプロセスです</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>アンケート回答</h3>
+                    <p><strong>所要時間：5〜7分</strong></p>
+                    <p>業務効率化の実感、システム利用状況、導入前後の変化などに関する選択式・記述式の質問にお答えいただきます。</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>データ集計・分析</h3>
+                    <p><strong>期間：約1ヶ月</strong></p>
+                    <p>沖縄県内全団体の回答を統計的に分析し、全体の傾向把握と個別団体の評価を実施いたします。</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>成果物のお届け</h3>
+                    <p><strong>分析完了後</strong></p>
+                    <p>統計レポート、個別報告書をPDF形式で提供いたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ -->
+    <section class="section faq">
+        <div class="container">
+            <h2>❓ よくある質問・注意事項</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q: 他団体の回答内容は開示されますか？
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    A: 個別団体の回答内容が特定される形での開示は一切いたしません。統計データとして匿名化処理を行った上で、全体傾向のみをお伝えします。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q: 回答者の個人情報は保護されますか？
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    A: はい。回答者個人が特定される情報は収集せず、団体単位での集計・分析のみを実施いたします。データは厳重に管理し、調査目的以外での使用は一切いたしません。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q: アンケートの所要時間はどの程度ですか？
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    A: 約5〜7分程度を想定しております。選択式の質問が中心で、記述式は2〜3問程度となっています。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Q: 費用は発生しますか？
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    A: アンケートへのご協力、成果物の提供ともに完全無償です。費用は一切発生いたしません。
+                </div>
+            </div>
     </section>
 
-    <section>
-      <h2>次世代DX</h2>
-      <div class="grid g-3">
-        <div class="card"><h3>VR/AR/MR</h3></div>
-        <div class="card"><h3>NFT</h3></div>
-        <div class="card"><h3>メタバース</h3></div>
-        <div class="card"><h3>PLATEAU</h3></div>
-      </div>
+    <!-- 最終CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>🏛️ より良いサポートのため、ぜひご協力ください</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">
+                申請管理システムの活用状況を把握することで、沖縄県内の自治体さまにより適したサポートを提供できるようになります。<br>
+                貴団体での成果を可視化し、さらなる業務効率化・住民サービス向上につなげるため、ぜひアンケートにご協力ください。
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#survey-form" class="cta-button" id="survey-form">📝 今すぐアンケートに回答する</a>
+                <a href="mailto:div-sys-dsg@occ.co.jp" class="secondary-button">✉️ ご質問・お問い合わせはこちら</a>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2>導入効果（イメージ）</h2>
-      <div class="stats">
-        <div class="stat"><div class="num">-20%</div><div class="cap">窓口待ち時間</div></div>
-        <div class="stat"><div class="num">10→数秒</div><div class="cap">文書検索時間</div></div>
-        <div class="stat"><div class="num">+30%</div><div class="cap">庁内情報共有スピード</div></div>
-      </div>
+    <!-- お問い合わせ情報 -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-box">
+                <h3>📞 お問い合わせ先</h3>
+                <p><strong>OCC 自治体コンサルティング本部デジタルサービス部</strong></p>
+                <p>Email: <a href="div-sys-dsg@occ.co.jp" style="color: #ff6b35;">div-sys-dsg@occ.co.jp</a></p>
+                <p>受付時間: 平日 9:00-17:00</p>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2>導入までの流れ</h2>
-      <div class="grid g-2">
-        <div class="card"><strong>① ヒアリング</strong><div class="muted">現状・課題を確認</div></div>
-        <div class="card"><strong>② ご提案・お見積</strong><div class="muted">デモやPoCのご用意</div></div>
-        <div class="card"><strong>③ ご契約・納品</strong><div class="muted">調達方式に柔軟対応</div></div>
-        <div class="card"><strong>④ 導入・運用支援</strong><div class="muted">設定・教育・サポート</div></div>
-      </div>
-    </section>
+    <script>
+        // FAQ アコーディオン機能
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('span');
+                
+                if (answer.style.display === 'none' || answer.style.display === '') {
+                    answer.style.display = 'block';
+                    icon.textContent = '▲';
+                } else {
+                    answer.style.display = 'none';
+                    icon.textContent = '▼';
+                }
+            });
+        });
 
-    <section>
-      <div class="cta">
-        <div><strong>まずはお気軽にご相談ください。</strong><div class="muted">要件定義・比較・稟議資料作成をサポートします。</div></div>
-        <a href="mailto:<<div-sys-dsg@occ.co.jp>>">メールで相談</a>
-      </div>
-    </section>
-  </main>
+        // 初期状態で回答を隠す
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
 
-  <footer>
-    <div class="container">
-      <div style="display:flex; justify-content:space-between; flex-wrap:wrap;">
-        <div>
-          <strong>株式会社オーシーシー</strong><br>
-          〒901-2112 沖縄県浦添市沢岻2丁目17番1号<br>
-          TEL: 098-876-1171　MAIL:div-sys-dsg@occ.co.jp<br>
-          担当：與座、赤嶺        </div>
-        <div>© <span id="year"></span> 株式会社OCC. All rights reserved.</div>
-      </div>
-    </div>
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // CTAボタンのクリックイベント（実際のアンケートURLに置き換え）
+        document.querySelectorAll('.cta-button').forEach(button => {
+            if (button.textContent.includes('アンケートに回答')) {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // alert('https://forms.example.com/survey');
+                    // 実際の運用時は以下のようにURLを設定
+                    window.open('https://forms.office.com/r/QScbR4gvKj', '_blank');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
